@@ -22,8 +22,6 @@ public class AppDbContext(DbContextOptions options) : DbContext(options)
     {
         base.OnModelCreating(builder);
         
-        // Publishing Context
-       
         builder.ApplyProductConfiguration();
         builder.ApplyBillOfMaterialsItemConfiguration();
         builder.UseSnakeCaseNamingConvention();
