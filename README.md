@@ -1,7 +1,7 @@
-﻿# MRPeasyManufacturing Platform
+﻿# --- Platform
 
 ## Summary
-MRPeasy Manufacturing Platform API,
+--- Platform API,
 made with Microsoft C#, ASP.NET Core, Entity Framework Core and MySQL persistence.
 It also illustrates open-api documentation configuration and integration with Swagger UI.
 
@@ -18,36 +18,35 @@ It also illustrates open-api documentation configuration and integration with Sw
 - Domain-Driven Design
 
 ## Bounded Contexts
-This version of MRPeas Manufacturing Platform is divided into two bounded contexts: Inventories, and Manufacturing.
+This version of --- Platform is divided into two bounded contexts: ---, and ---.
 
-### Inventories Context
+### --- Context
 
-The Inventories' Context is responsible for managing the products. It includes the following features:
+The ---' Context is responsible for managing the ---. It includes the following features:
 
-- Create products
-- Get all products
-- Get a product by Product Number
-
+- 
+- 
+- 
 
 This context includes also an anti-corruption layer to communicate with the Manufacturing Context.
 The anti-corruption layer is responsible
-for managing the communication between the Inventories' Context and the Manufacturing Context.
+for managing the communication between the ---' Context and the --- Context.
 It offers the following capabilities to other bounded contexts:
 
-- Get product by Product Number
+- 
 
-### Manufacturing Context
+### --- Context
 
-The Manufacturing Context is responsible for managing the Bill of Materials Items.
+The --- Context is responsible for managing the ---.
 Its features include:
 
-- Create Bill of Materials Item
-- Get all Bill of Materials Items
-- Get Last Required Quantity
+- 
+- 
+- 
 
-This context includes also an anti-corruption layer to communicate with the Manufacturing Context.
+This context includes also an anti-corruption layer to communicate with the --- Context.
 The anti-corruption layer is responsible
-for managing the communication between the Manufacturing Context and the Inventories' Context.
+for managing the communication between the --- Context and the ---' Context.
 It offers the following capabilities to other bounded contexts:
 
-- Get Last Required Quantity.
+- 

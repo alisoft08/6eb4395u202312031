@@ -21,5 +21,12 @@ public static class ModelBuilderExtensions
             sn.WithOwner().HasForeignKey("Id");
             sn.Property(p => p.Identifier).HasColumnName("ProductNumber");
         });
+        
+        builder.Entity<Product>().Property(p=> p.Name)
+            .IsRequired()
+            .HasMaxLength(60);
+
+        builder.Entity<Product>().Property(p => p.ProductType).IsRequired();
+        builder.Entity<Product>().Property(p => p.MaxProductionQuantity).IsRequired();
     }
 }
