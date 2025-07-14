@@ -36,7 +36,7 @@ It offers the following capabilities to other bounded contexts:
 
 - Get product by Product Number
 
-### Manufcaturing Context
+### Manufacturing Context
 
 The Manufacturing Context is responsible for managing the Bill of Materials Items.
 Its features include:
