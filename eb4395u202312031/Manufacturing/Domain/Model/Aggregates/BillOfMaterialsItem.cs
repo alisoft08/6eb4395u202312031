@@ -1,5 +1,4 @@
-﻿using eb4395u202312031.Inventories.Domain.Model.Aggregates;
-using eb4395u202312031.Manufacturing.Domain.Model.Commands;
+﻿using eb4395u202312031.Manufacturing.Domain.Model.Commands;
 using eb4395u202312031.Manufacturing.Domain.Model.ValueObjects;
 
 namespace eb4395u202312031.Manufacturing.Domain.Model.Aggregates;
@@ -23,10 +22,10 @@ public partial class BillOfMaterialsItem
 
   
     public DateTime ScheduledStartedAt { get; set; }
-    
+
+   
     public DateTime RequiredAt { get; set; }
 
-    
     
     public BillOfMaterialsItem() { }
 
@@ -46,7 +45,6 @@ public partial class BillOfMaterialsItem
         {
             throw new ArgumentOutOfRangeException(nameof(scheduledStartedAt), "El valor de ScheduledStartedAt debe ser al menos 30 días mayor que RequiredAt.");
         }
-        
         ScheduledStartedAt = scheduledStartedAt;
         
         

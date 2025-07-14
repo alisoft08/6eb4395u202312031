@@ -20,10 +20,10 @@ public static class CreateBillOfMaterialsItemCommandFromResourceAssembler
     /// <remarks>
     /// Alison Jimena Arrieta Quispe
     /// </remarks>
-    public static CreateBillOfMaterialsItemCommand ToCommandFromResource(CreateBillOfMaterialsItemResource resource, int billOfMaterialsId)
+    public static CreateBillOfMaterialsItemCommand ToCommandFromResource(CreateBillOfMaterialsItemResource resource)
     {
         return new CreateBillOfMaterialsItemCommand(
-            billOfMaterialsId,
+            resource.BillOfMaterialsId,
             new ItemProductNumber(resource.ItemProductNumber),
             resource.BatchId,
             resource.RequiredQuantity,
