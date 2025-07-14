@@ -2,7 +2,6 @@
 
 
 public record CreateBillOfMaterialsItemResource(
-    int BillOfMaterialsId,
     Guid ItemProductNumber,
     int BatchId,
     int RequiredQuantity,

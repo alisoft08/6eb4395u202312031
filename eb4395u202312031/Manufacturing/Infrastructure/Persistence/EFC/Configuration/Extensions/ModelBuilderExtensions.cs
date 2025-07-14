@@ -20,5 +20,7 @@ public static class ModelBuilderExtensions
             sn.WithOwner().HasForeignKey("Id");
             sn.Property(p => p.Identifier).HasColumnName("ItemProductNumber");
         });
+        
+
     }
 }

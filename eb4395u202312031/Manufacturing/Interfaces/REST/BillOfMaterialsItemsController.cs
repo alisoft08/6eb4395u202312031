@@ -16,8 +16,8 @@ namespace eb4395u202312031.Manufacturing.Interfaces.REST;
 [ApiController]
 [Route("api/v1/[controller]")]
 [Produces(MediaTypeNames.Application.Json)]
-[SwaggerTag("Available Product State Endpoints.")]
-public class BillOfMaterialsItemsController(IBillOfMaterialsItemCommandService BillOfMaterialsItemCommandService)
+[SwaggerTag("Available Bill Of Materials Endpoints.")]
+public class BillOfMaterialsController(IBillOfMaterialsItemCommandService BillOfMaterialsItemCommandService)
     : ControllerBase
 {
     /// <summary>
@@ -30,13 +30,13 @@ public class BillOfMaterialsItemsController(IBillOfMaterialsItemCommandService B
     /// <remarks>
     /// Alison Jimena Arrieta Quispe
     /// </remarks>
-    [HttpPost]
+    [HttpPost("{billOfMaterialsId:int}/items")]
     [SwaggerOperation("Create BillOfMaterialsItem", "Create a new BillOfMaterialsItem.", OperationId = "CreateBillOfMaterialsItem")]
     [SwaggerResponse(201, "The BillOfMaterialsItem was created.", typeof(BillOfMaterialsItemResource))]
     [SwaggerResponse(400, "The BillOfMaterialsItem was not created.")]
-    public async Task<IActionResult> CreateProfile(CreateBillOfMaterialsItemResource resource)
+    public async Task<IActionResult> CreateProfile([FromRoute] int billOfMaterialsId, [FromBody]CreateBillOfMaterialsItemResource resource)
     {
-        var createBillOfMaterialsItemCommand = CreateBillOfMaterialsItemCommandFromResourceAssembler.ToCommandFromResource(resource);
+        var createBillOfMaterialsItemCommand = CreateBillOfMaterialsItemCommandFromResourceAssembler.ToCommandFromResource(resource, billOfMaterialsId);
         var BillOfMaterialsItem = await BillOfMaterialsItemCommandService.Handle(createBillOfMaterialsItemCommand);
         if (BillOfMaterialsItem is null) return BadRequest();
         var ProductResource = BillOfMaterialsItemResourceFromEntityAssembler.ToResourceFromEntity(BillOfMaterialsItem);
